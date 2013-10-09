@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>背单词—罗德国际教育</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+<meta name="copyright" content="Copyright 2003-2013. www.luode.org . All Rights Reserved." />
+<meta name="keywords" content="托福培训,sat考试培训,美国留学机构,留学培训,出国留学" />
+<meta name="description" content="托福培训,sat考试培训,美国留学机构,留学培训,出国留学" />
+
+<link rel="stylesheet" type="text/css" href="/sbay/jquery.noty[1].css"/>
+<link rel="stylesheet" type="text/css" href="/sbay/noty_theme_default[1]_(2).css"/>
+<link rel="stylesheet" type="text/css" href="/sbay/17bdc_main.261c134833480f6ded42d6bcbed63fee[1].css"/>
+<link rel="stylesheet" type="text/css" href="/sbay/vocabtest.bd2862ce19af9826e2017500de704457[1].css"/>
+<link rel="stylesheet" type="text/css" href="/sbay/fontdiao[1]_(2).css"/>
+<link rel="stylesheet" type="text/css" href="/sbay/font_awesome[1]_(2).css"/>
+<link rel="stylesheet" type="text/css" href="/sbay/shanbay_ie.cd79192d1f377dd6abbaa9930ff805cd[1]_(2).css"/>
+<link rel="stylesheet" type="text/css" href="/sbay/font_awesome_ie7[1].css"/>
+
+
+</head>
+<body data-offset="50" data-target=".subnav" data-spy="scroll" >
+<img style="Z-INDEX: 10000000; POSITION: fixed; TOP: 40px; RIGHT: 160px" class=hide src="/sbay/clip[1].png" />
+	<!-- 头部 -->
+	<div align="center"><#include "/pages/navbar.html" parse=true/></div>
+	<!-- 头部 -->
+ 
+	<!-- 中间 -->
+	<div class=logo>
+		<div class=container>
+			<div class=sub-nav>
+				<ul class="nav nav-pills">
+					<li class=active><a href="/letter/${member.id}">我的单词书</a></li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+	<!-- 中间 -->
+  <!-- 主体 -->
+<div class=gradient-bar>&nbsp; </div><!-- 横线 -->
+
+<div class="container main-body ">
+            
+            <div class="row">
+                <div class="vocabtest-box span12">
+                    <div class="page-header">
+                        
+                            <h1> 看看你的测试结果吧 </h1>
+                        
+                    </div>
+                    
+                    <div class="row vocabtest-middle-container">
+                        <div class="span8 offset2" >
+                            <div class="well">
+                                <ol>
+                               	<p><h4>正确单词数量：${wordtestCount_right}</h4></p>
+                                <p><h4>错误单词数量：${wordtestCount_wrong}</h4></p>
+                                <p><h4>成&nbsp;&nbsp;功&nbsp;&nbsp;率：${success}%</h4></p>
+                               	<h1> ${testResult} </h1>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="button-area row">
+                        <div class="span3 offset7">
+                        <a href="/letter/bookChapter/${bookId}-${member.id}" class="vocabtest-large-button" id="button_startnow">返回学习</a>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    
+                    
+                </div>
+            </div>
+            
+ 
+    
+    </div>
+    
+
+</body>
+</html>
+

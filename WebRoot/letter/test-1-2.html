@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>背单词—罗德国际教育</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+<meta name="copyright" content="Copyright 2003-2013. www.luode.org . All Rights Reserved." />
+<meta name="keywords" content="托福培训,sat考试培训,美国留学机构,留学培训,出国留学" />
+<meta name="description" content="托福培训,sat考试培训,美国留学机构,留学培训,出国留学" />
+
+<link rel="stylesheet" type="text/css" href="/sbay/jquery.noty[1].css"/>
+<link rel="stylesheet" type="text/css" href="/sbay/noty_theme_default[1]_(2).css"/>
+<link rel="stylesheet" type="text/css" href="/sbay/17bdc_main.261c134833480f6ded42d6bcbed63fee[1].css"/>
+<link rel="stylesheet" type="text/css" href="/sbay/vocabtest.bd2862ce19af9826e2017500de704457[1].css"/>
+<link rel="stylesheet" type="text/css" href="/sbay/fontdiao[1]_(2).css"/>
+<link rel="stylesheet" type="text/css" href="/sbay/font_awesome[1]_(2).css"/>
+<link rel="stylesheet" type="text/css" href="/sbay/shanbay_ie.cd79192d1f377dd6abbaa9930ff805cd[1]_(2).css"/>
+<link rel="stylesheet" type="text/css" href="/sbay/font_awesome_ie7[1].css"/>
+<script src="/js/jquery-1.7.2.min.js"> </script>
+
+</head>
+
+<body data-offset="50" data-target=".subnav" data-spy="scroll" >
+<img style="Z-INDEX: 10000000; POSITION: fixed; TOP: 40px; RIGHT: 160px" class=hide src="/sbay/clip[1].png" />
+	<!-- 头部 -->
+	<div align="center"><#include "/pages/navbar.html" parse=true/></div>
+	<!-- 头部 -->
+ 
+
+  <!-- 主体 -->
+<div class=gradient-bar>&nbsp; </div><!-- 横线 -->
+
+<div class="container main-body ">
+            
+            <div class="row">
+                <div class="vocabtest-box span12">
+                    <div class="page-header">
+    						<h1> 请告诉我们你即将参加的英语考试： </h1>
+                    </div>
+                    
+					<div class="row vocabtest-middle-container">
+					    <fieldset class="span8 offset2" id="exam_names">
+					        <div class="well">
+					            <ul>
+					                    <div class="row">
+					                        <li class="span3"><label class="radio"><input type="radio" value="1" name="exam_type"/>托福</label></li>
+					                        <li class="span3"><label class="radio"><input type="radio" value="2" name="exam_type"/>SAT</label></li>
+					                    </div>
+					            </ul>
+					        </div>
+					    </fieldset>
+					</div>
+				
+					<div class="row">
+					    <p class="offset8 red hide" id="fail_prompt">
+					        请在上述选项中选择一个
+					    </p>
+					</div>
+				
+					<div class="row button-area">
+					    <div class="span3 offset7">
+					        <a href="/letter/test/" class="vocabtest-large-button" id="button_exam">下一步</a>
+					    </div>
+					</div>
+				
+					<div class="clear"></div>
+          		</div>
+    		</div>
+            
+</div><!--container main-body  -->
+
+ <script type="text/javascript">
+ 
+	$('#button_exam').click(function(){
+		var exam_type = $('#exam_names input:checked');
+		if (exam_type.length == 0){
+			$('#fail_prompt').show(200);
+			return false;
+		}
+		var url = $(this).attr('href');
+		url = url + exam_type.val();
+		$(this).attr('href', url);
+	}); 
+	
+	$('input[name="exam_type"]').click(
+		function(){
+		$('#fail_prompt').hide(200);
+	});
+	
+	$('#exam_names li label').addClass('radio');
+	
+	
+</script> 
+</body>
+</html>
+

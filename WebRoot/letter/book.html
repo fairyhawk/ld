@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>背单词—罗德国际教育</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+<meta name="copyright" content="Copyright 2003-2013. www.luode.org . All Rights Reserved." />
+<meta name="keywords" content="托福培训,sat考试培训,美国留学机构,留学培训,出国留学" />
+<meta name="description" content="托福培训,sat考试培训,美国留学机构,留学培训,出国留学" />
+<link rel="stylesheet" type="text/css" href="/sbay/jquery.noty[1].css" />
+<link rel="stylesheet" type="text/css" href="/sbay/noty_theme_default[1].css" />
+<link rel="stylesheet" type="text/css" href="/sbay/new_wordbook.bd2862ce19af9826e2017500de704457[1].css" />
+<link rel="stylesheet" type="text/css" href="/sbay/fontdiao[1].css" />
+<link rel="stylesheet" type="text/css" href="/sbay/font_awesome[1].css" />
+<link rel="stylesheet" type="text/css" href="/sbay/luode_ie.cd79192d1f377dd6abbaa9930ff805cd[1].css" />
+<link rel="stylesheet" type="text/css" href="/sbay/font_awesome_ie7[1].css" />
+
+
+<link rel="stylesheet" type="text/css" href="/sbay/noty_theme_default[1]_(1).css" />
+<link rel="stylesheet" type="text/css" href="/sbay/new_wordbook.bd2862ce19af9826e2017500de704457[1]_(1).css" />
+<link rel="stylesheet" type="text/css" href="/sbay/fontdiao[1]_(1).css" />
+<link rel="stylesheet" type="text/css" href="/sbay/font_awesome[1]_(1).css" />
+<link rel="stylesheet" type="text/css" href="/sbay/shanbay_ie.cd79192d1f377dd6abbaa9930ff805cd[1]_(1).css" />
+<script src="/js/jquery-1.9.0.js"></script>
+
+</head>
+<body data-offset="50" data-target=".subnav" data-spy="scroll">
+	<img style="Z-INDEX: 10000000; POSITION: fixed; TOP: 40px; RIGHT: 160px" class=hide src="/sbay/clip[1].png" />
+	<!-- 头部 -->
+	<div align="center"><#include "/pages/navbar.html" parse=true/></div>
+	<!-- 头部 -->
+
+	<!-- 中间 -->
+	<div class=logo>
+		<div class=container>
+			<div class=sub-nav>
+				<ul class="nav nav-pills">
+					<li class=active><a href="/letter/${member.id}">我的单词书</a></li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+	<!-- 中间 -->
+	<!-- 主体 -->
+	<div class=gradient-bar>&nbsp;</div>
+	<!-- 横线 -->
+
+	<div class="container main-body ">
+		<div class=row>
+			<div class=span8>
+				<#if book?? > <#list book.getList() as x> <#if (x_index ==0 )>
+				<div class="row wordbook-row"></#if> <#if (x_index % 2 == 0 && x_index!=0 && x_index!=(book.getList()?size-1 )) ></div>
+				<!-- row wordbook-row -->
+				<div class="row wordbook-row">
+					</#if>
+
+					<div class="span4 wordbook-detail-container wordbook-brief-overview">
+						<div class="row">
+							<div class="wordbook-cover span thumbnail">
+								<img src="${x.picture}" />
+							</div>
+
+							<div class="wordbook-basic-info span">
+								<div class="wordbook-title" title="${x.name}">
+									<a href="/letter/bookChapter/${x.id}-${member.id}">${x.name}</a>
+								</div>
+								<div class="wordbook-owner">
+									<span>作者: </span>${x.author}
+								</div>
+								<div class="wordbook-count">
+									<span>单词数: </span>${x.wordsnumber}</br>
+								</div>
+
+							</div>
+						</div>
+						<div class="wordbook-short-description well">
+							<p>
+								<#if (x.description?length>40)> ${x.description[0..40]?default("")} (<a href="/letter/bookChapter/${x.id}-${member.id}">更多</a>) <#else> ${x.description?default("")} </#if>
+							</p>
+						</div>
+					</div>
+
+					<#if (x_index== (book.getList()?size-1))>
+				</div>
+				<!-- row wordbook-row -->
+				</#if> </#list> </#if>
+
+
+
+			</div>
+			<div class=span4>
+				<div class=page-header>
+					<h3>单词书分类</h3>
+				</div>
+				<span id=current-category-id class=hide></span>
+				<ul id=wordbook-category-list class="nav nav-tabs nav-stacked">
+					<#if bookType?? > <#list bookType.getList() as x>
+					<li><a href="/letter/book/${x.id}-${member.id}">${x.name}</a></li> </#list> </#if>
+				</ul>
+			</div>
+		</div>
+		<!-- row -->
+
+
+	</div>
+	<!-- container -->
+
+</body>
+</html>
+

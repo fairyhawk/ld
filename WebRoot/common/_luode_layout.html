@@ -1,0 +1,126 @@
+<#macro layout>
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>luode! Learning your way</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+<meta name="copyright" content="Copyright 2003-2013. www.luode.org . All Rights Reserved." />
+<meta name="keywords" content="托福培训,sat考试培训,美国留学机构,留学培训,出国留学" />
+<meta name="description" content="托福培训,sat考试培训,美国留学机构,留学培训,出国留学" />
+<link rel="stylesheet" type="text/css" href="/sbay/jquery.noty[1].css" />
+<link rel="stylesheet" type="text/css" href="/sbay/noty_theme_default[1].css" />
+<link rel="stylesheet" type="text/css" href="/sbay/new_wordbook.bd2862ce19af9826e2017500de704457[1].css" />
+<link rel="stylesheet" type="text/css" href="/sbay/fontdiao[1].css" />
+<link rel="stylesheet" type="text/css" href="/sbay/font_awesome[1].css" />
+<link rel="stylesheet" type="text/css" href="/sbay/luode_ie.cd79192d1f377dd6abbaa9930ff805cd[1].css" />
+<link rel="stylesheet" type="text/css" href="/sbay/font_awesome_ie7[1].css" />
+
+</head>
+<body data-offset="50" data-target=".subnav" data-spy="scroll" >
+<img style="Z-INDEX: 10000000; POSITION: fixed; TOP: 40px; RIGHT: 160px" class=hide src="/sbay/clip[1].png" />
+ <!-- 头部 -->
+<div class="navbar navbar-fixed-top">
+	<div class=navbar-inner>
+		<div class=container ><a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+			<span class=icon-bar></span><span class=icon-bar></span><span class=icon-bar></span></a>
+			<a class=brand href="/"><img src="/sbay/logo2[1].png" /></a> 
+			<div class=nav-collapse>
+				<ul class=nav>
+					<li class=dropdown><a class=dropdown-toggle href="#" data-toggle="dropdown"  >背单词 </a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+ <!-- 头部 -->
+ 
+  <!-- 中间 -->
+<div class=logo>
+	<div class=container >
+		<div class=sub-nav>
+			<ul class="nav nav-pills">
+			<li class=active><a href="/letter">单词书</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- 中间 -->
+
+
+  <!-- 主体 -->
+<div class=gradient-bar>&nbsp; </div><!-- 横线 -->
+
+<div class="container main-body " >
+	<div class=row>
+		<div class=span8>
+		
+		<div class="well">
+                <div class="row">
+                    <div class="span6">
+                        <h4>${bookChapter.name}(${bookChapter.wordsnumber}单词)</h4>
+                        <p>${bookChapter.author}</p>
+                    </div>
+                    <div style="float: right" id="wordlist-operation-area" class="span1">
+                    </div>
+                </div>
+                <div class="wordlist-description-container">
+                    	${bookChapter.description}
+                </div>
+                <div class="wordbook-contains-this-wordlist">
+                    
+    			<p>该词串属于单词书：<a href="/letter/bookChapter/${book.id}">${book.name}</a> <a href="/letter/bookChapter/${book.id}" class="btn btn-success btn-mini">查看</a></p>
+
+                </div>
+            </div>
+            
+			<div class=tabbable>
+				<ul id=wordbook-wordlist-switcher class="nav nav-tabs">
+				<li class=active ><a id=wordbook-tab-trigger href="#wordbook-tab" data-toggle="tab">单词书</a></li>
+				</ul>
+				
+				<div class="table_box">
+				<table class="table table-bordered table-striped">
+					<tbody>
+						 <#if letterDetail?? >
+							<#list letterDetail.getList() as x>
+							<tr>
+								<td class="span2" >${x.word}</td>
+								<td class="span10" >${x.explanation}</td>
+							</tr>
+							</#list>
+						</#if>
+					</tbody>
+				</table>
+				<#if letterDetail?? >
+				<#include "/common/_paginate.html" />
+				<@paginate currentPage=letterDetail.pageNumber totalPage=letterDetail.totalPage actionUrl="/letter/detail/${book.id}-${bookChapter.id}-" />
+				</#if>
+			</div>
+			
+			
+			</div>
+		</div>
+		<div class=span4>
+			<div class=page-header>
+			<h3>单词书分类</h3>
+			</div>
+			<span id=current-category-id class=hide></span>
+			<ul id=wordbook-category-list class="nav nav-tabs nav-stacked">
+				<#if bookType?? >
+					<#list bookType.getList() as x>
+						<li ><a href="/letter/book/1-${x.id}">${x.name}</a></li>
+					</#list>
+				</#if>
+			</ul>
+			
+		</div>
+	</div>	<!-- row -->
+	
+	
+</div><!-- container -->
+
+</body>
+</html>
+
+</#macro>

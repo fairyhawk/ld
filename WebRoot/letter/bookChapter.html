@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>背单词—罗德国际教育</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+<meta name="copyright" content="Copyright 2003-2013. www.luode.org . All Rights Reserved." />
+<meta name="keywords" content="托福培训,sat考试培训,美国留学机构,留学培训,出国留学" />
+<meta name="description" content="托福培训,sat考试培训,美国留学机构,留学培训,出国留学" />
+<link rel="stylesheet" type="text/css" href="/css/jquery.noty.css" />
+<link rel="stylesheet" type="text/css" href="/css/noty_theme_default.css" />
+<link rel="stylesheet" type="text/css" href="/css/new_wordbook.css" />
+<link rel="stylesheet" type="text/css" href="/css/fontdiao.css" />
+<link rel="stylesheet" type="text/css" href="/css/font-awesome.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="/js/highcharts.js"></script>
+<script src="/js/modules/exporting.js"></script>
+<script type="text/javascript">
+	/* $(function() {
+		var noLearning = $("#noLearning").val();
+		var rigthCount = $("#rigthCount").val();
+		var wrongCount = $("#wrongCount").val();
+		var random = $("#random").val();
+		if(random == "0"){
+		$('#stata').highcharts({
+			chart : {
+				plotBackgroundColor : null,
+				plotBorderWidth : null,
+				plotShadow : false
+			},
+			title : {
+				text : ''
+			},
+			plotOptions : {
+				pie : {
+					allowPointSelect : true,
+					cursor : 'pointer',
+					dataLabels : {
+						enabled : true,
+						color : '#000000',
+						connectorColor : '#000000',
+						formatter : function() {
+							return '<b>' + this.point.name + '</b>: ' + Math.round(this.percentage) + ' %';
+						}
+					}
+				}
+			},
+			series : [ {
+				type : 'pie',
+				name : ' ',
+				data : [ [ '未测试', parseInt(noLearning) ], {
+					name : '正确数',
+					y : parseInt(rigthCount),
+					sliced : true,
+					selected : true
+				}, [ '错误数', parseInt(wrongCount) ] ]
+			} ]
+		});
+		}else{
+			$('#stata').hide();
+		}
+	});
+	
+	 */
+	
+	$(function () {
+	    var chart;
+		var noLearning = $("#noLearning").val();
+		var rigthCount = $("#rigthCount").val();
+		var wrongCount = $("#wrongCount").val();
+		var random = $("#random").val();
+		if(random == "0"){
+	    $(document).ready(function () {
+	    	
+	    	// Build the chart
+	        $('#stata').highcharts({
+	            chart: {
+	                plotBackgroundColor: null,
+	                plotBorderWidth: null,
+	                plotShadow: false
+	            },
+	            title: {
+	                text: ' '
+	            },
+	            colors:[
+	                    '#FFA70F',
+	                    '#0072BC',
+	                    '#98CF66'
+	                    ],
+	            plotOptions: {
+	                pie: {
+	                    allowPointSelect: true,
+	                    cursor: 'pointer',
+	                    dataLabels: {
+	                        enabled: false
+	                    },
+	                    showInLegend: true
+	                }
+	            },
+	            series: [{
+	                type: 'pie',
+	                name: ' ',
+	                data: [ [ '错误', parseInt(wrongCount) ],
+	                		[ '未测', parseInt(noLearning) ], 
+	                        {name : '正确',y : parseInt(rigthCount),sliced : true,	selected : true}
+	                ]
+	            }]
+	        });
+	    });
+		}
+	    
+	});	
+</script>
+</head>
+<body data-offset="50" data-target=".subnav" data-spy="scroll">
+	<img style="Z-INDEX: 10000000; POSITION: fixed; TOP: 40px; RIGHT: 160px" class=hide src="/sbay/clip[1].png" />
+	<!-- 头部 -->
+	<div align="center"><#include "/pages/navbar.html" parse=true/></div>
+	<!-- 头部 -->
+	<!-- 主体 -->
+	<div class=gradient-bar>&nbsp;</div>
+	<!-- 横线 -->
+
+	<div class="container main-body ">
+		<div class=row>
+			<div class=span8 style="width: 836px;">
+
+				<div class="wordbook-container">
+					<#if book?? >
+					<div class="row wordbook-detail-container">
+						<div class="wordbook-cover span">
+							<a href="/letter/bookChapter/${book.id}-${member.id}"><img src="${book.picture}" class="thumbnail" style="width: 90px; height: 117px" /></a>
+						</div>
+						<div class="wordbook-basic-info span3">
+							<div class="wordbook-title">
+								<input type="hidden" name="bid" id="bid" value="${book.id}" />
+								<a href="/letter/bookChapter/${book.id}-${member.id}">${book.name}</a>
+							</div>
+							<div>
+								<!-- <span>分类： </span><a href="/letter/book/${thisBookType.id}-${member.id}" target="_blank">${thisBookType.name}</a> -->
+								<span>分类： </span>${thisBookType.name}
+							</div>
+							<div class="wordbook-owner">
+								<span>作者： </span><span class="wordbook-owner-username">${book.author}</span>
+							</div>
+
+							<div style="min-width: 300px;" class="wordbook-count">
+								<span>单词数：</span>${book.wordsnumber}
+								<span>正确：</span>${rigthCount}
+								<span>错误：</span>${wrongCount}
+							</div>
+							<div style="min-width: 300px; margin-top: 10px">
+								<#if mtList ??>
+								<table width="300px">
+									<tr>
+										<td align="left" colspan="3"><h4>测试记录</h4></td>
+									</tr>
+									<tr>
+										<td width="6%" align="left" >类型</td>
+										<td width="12%" align="left" >开始时间</td>
+										<td width="6%" align="left" >状态</td>
+									</tr>
+									<#list mtList as x>
+									<tr>
+										<td align="left">${x.test_type}</td>
+										<td align="left">${x.start_time}</td>
+										<#if x.test_finish=='已完成'>
+											<td align="left">${x.test_finish}</td>
+										<#else>
+											<td align="left"><a href="/letter/goOnTestStep2/${x.id}">继续测试</a></td>
+										</#if>
+									</tr>
+								</#list>
+								<tr>
+								<td align="right" colspan="3"><a href="/letter/testRecord">更多</a></td>
+								</tr>
+								</table>
+								</#if>
+							</div>
+						</div>
+						
+						<div id="stata" style="min-width: 250px; height: 250px; margin-left:500px;"></div>
+						<input id="noLearning" type="hidden" value="${noLearning}"/>
+						<input id="rigthCount" type="hidden" value="${rigthCount}"/>
+						<input id="wrongCount" type="hidden" value="${wrongCount}"/>
+						<input id="random" type="hidden" value="${random}"/>
+					</div>
+
+					<div class="wordbook-description">
+						<p id="heading">单词书描述：</p>
+						<div class="indent well">${book.description}</div>
+					</div>
+					<#if isLearn == 1>
+					<div id="wordbook-detail-container">
+						<div class="well" id="wordbook-wordlist-container">
+
+							<#if bookChapter?? >
+							<#if random == '1'>
+							<form action="/letter/randomTest/" method="post">
+								<input type="hidden" name="memberId" value="${member.id}" />
+								<input type="hidden" name="bookTypeId" value="${book.bookType_id}" /> 
+								<input type="hidden" name="bookId" value="${book.id}" /> 
+								<input type="hidden" name="testType" value="3" /> 
+								<input type="radio" name="priorTest" value="1" checked="checked" />优先测试未测单词 
+								<input type="radio" name="priorTest" value="2" />优先测试错过单词 
+								<table width="100%">
+									<tbody>
+										<tr>
+											<#list bookChapter as x>
+											<#if (x_index+1) %10 ==0 >
+											<td class="wordbook-wordlist-name"><input type="checkbox" id="bchapters" name="bchapters" value="${x.id}" />${x.name}</td>
+										</tr>
+										<tr>
+											<#else>
+											<td class="wordbook-wordlist-name"><input type="checkbox" id="bchapters" name="bchapters" value="${x.id}" />${x.name}</td> 
+											</#if> 
+											</#list>
+									</tbody>
+								</table>
+								<div class="button-area row" id="button_next">
+									<div class="span3 offset9">
+										<input type="submit" value="下一步" class="vocabtest-large-button" id="submit" />
+									</div>
+									<div class="row hide">
+										<p class="span2 offset10">请稍后...</p>
+									</div>
+								</div>
+							</form>
+							<#else>
+							<div>
+								<p>
+									* 此单词书包含如下单元。如果您想进行多个单元的随机测试 <a href="/letter/bookChapter/${book.id}-${member.id}-1">请点击这里</a>
+								</p>
+							</div>
+							<#list bookChapter as x>
+							<div class="wordbook-create-candidate-wordlist wordbook-containing-wordlist">
+								<table width="100%">
+									<tbody>
+										<tr>
+											<td class="wordbook-wordlist-name">${x.name}&nbsp;&nbsp;
+												<a href="/letter/detail/${member.id}-${book.id}-${x.id}-1">[背单词]</a> &nbsp;&nbsp; 
+												<a href="/letter/test/${book.bookType_id}-${book.id}-${x.id}-${member.id}">[单元测试]</a> &nbsp;&nbsp; 
+												<a href="/letter/testWrong/${book.bookType_id}-${book.id}-${x.id}-${member.id}">[错词测试]</a>
+													&nbsp; 
+												<#if (x.wordsnumber==x.remain) >
+													<font color="red">未学习</font><font size="3">-</font> 
+												<#elseif (x.remain>0) >
+													<font color="green">学习中</font><font size="3">×</font> 
+												<#else >
+													<font color="blue">已学完</font><font size="3">√</font> 
+												</#if>
+											</td>
+											<td align="right" class="wordbook-wordlist-count"><span>单词数：</span>${x.wordsnumber}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							</#list>
+							</#if>
+							</#if>
+							</div>
+							</div>
+							</#if>
+							<span id="wordbook-id-html" class="hide">${book.id}</span>
+							</#if>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- row -->
+				<input type="hidden" name="mid" id="mid" value="${member.id}" />
+</body>
+</html>
+

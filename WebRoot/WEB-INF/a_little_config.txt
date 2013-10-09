@@ -1,0 +1,4 @@
+jdbcUrl = jdbc:mysql://192.168.1.10/ludletter?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+user = admin268xue
+password = admin268xue
+devMode = true

@@ -1,0 +1,61 @@
+.boxy-wrapper {
+    position: absolute;
+	top:200px;
+	background:#fff;
+}
+
+.boxy-wrapper.fixed {
+    position: fixed;
+}
+
+/* Modal */
+.boxy-modal-blackout,.boxy-modal-iframe {
+	background-color: #9eb9d9;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.boxy-modal-iframe{
+	filter: alpha(opacity=0) !important;
+	opacity: 0 !important;
+}
+/* Title bar */
+
+.boxy-wrapper .boxy-title-bar { background: url(images/bar-bg.gif); position: relative;padding:0;line-height:28px;height:28px;}
+.boxy-wrapper .boxy-title-bar.boxy-dragging { cursor: move; }
+.boxy-wrapper .boxy-title-bar h2 { font-size: 12px; color: #fff; margin: 0; padding:0 10px;}
+.boxy-wrapper .boxy-title-bar .boxy-close { background: url('images/boxy-close.gif') no-repeat 0 0 ;width:16px;height:16px;position: absolute; top: 8px; right: 8px; line-height: 1; z-index:2001;text-indent:-9999px;overflow:hidden;}
+	
+/* Content Region */
+
+.boxy-inner {border:1px solid #CFCFCF;padding:1px;}
+.boxy-content { padding:10px; }
+
+/* Question Boxes */
+
+.boxy-wrapper .boxy-question { width: 250px; background-color:#FCFFDD;border:1px solid #D3D8BA;font-size:14px;padding:20px;text-align:center;margin-bottom:10px;}
+.boxy-wrapper .boxy-question s.ok{ width:21px;height:21px;background-position:0 -2400px;display:inline-block;vertical-align:middle; }
+.boxy-wrapper .boxy-answers { text-align: right; }
+.boxy-wrapper button .btn{ background-position:0 -680px;}
+.boxy-wrapper button .btn span{ background-position:right -680px; line-height:35px; height:35px; color:#fff; font-weight:bold;font-size:14px;}
+.boxy-wrapper button:hover .btn span{color:#CEDEE5;}
+
+fieldset {padding:10px;margin-top:5px;border:0;background:#fff; line-height:30px;}
+fieldset label {float:left;width:100px;text-align:right;padding:0px;margin:3px;}
+fieldset .title{background:#e6e6e6; padding-left:10px; font-weight:bold;}
+fieldset .text_box_style{ border:1px solid #d5d5d5; background:#fff; height:15px; padding:5px;}
+fieldset div {clear:left;margin:10px 0;}
+fieldset .password_simple{ background:url(../images/icon_other.gif) 0 -102px no-repeat; width:21px; height:11px; padding:0; margin:0;}
+fieldset .tips_normal{color:#4f92d3; background:url(../images/icon_other.gif) 0 -150px no-repeat; padding-left:15px;}
+fieldset .tips_right{color:#68c441; background:url(../images/icon_other.gif) 0 -167px no-repeat; padding-left:15px;}
+fieldset .tips_error{color:#f43412; background:url(../images/icon_other.gif) 0 -183px no-repeat; padding-left:15px;}
+fieldset .dotted{ border-bottom:1px dotted #777;}
+
+.border_1px{border:1px solid #CFCFCF; padding:5px;}
+.box_h250{overflow:auto;height:250px; scrollbar-highlight-color: #c0d0df; scrollbar-shadow-color: #c0d0df; scrollbar-arrow-color: #c0d0df; scrollbar-face-color: #fff; scrollbar-3dlight-color: #fff; scrollbar-darkshadow-color: #fff; scrollbar-track-color: #f2f2f2;}
+/* 2011-04-10 add by yongliang.wang */
+.box_h150{overflow:auto;height:100px; scrollbar-highlight-color: #c0d0df; scrollbar-shadow-color: #c0d0df; scrollbar-arrow-color: #c0d0df; scrollbar-face-color: #fff; scrollbar-3dlight-color: #fff; scrollbar-darkshadow-color: #fff; scrollbar-track-color: #f2f2f2;}
+.check_box{ width:380px;overflow:auto;height:400px;HEIGHT: 140;  scrollbar-highlight-color: #c0d0df; scrollbar-shadow-color: #c0d0df; scrollbar-arrow-color: #c0d0df; scrollbar-face-color: #fff; scrollbar-3dlight-color: #fff; scrollbar-darkshadow-color: #fff; scrollbar-track-color: #f2f2f2; height:100px;}
+.check_box span{ width:90px; display:block; float:left}
+#SignFrame td{ background:#ffffff;text-align:center;}
+.box_h50{overflow:auto;height:50px; scrollbar-highlight-color: #c0d0df; scrollbar-shadow-color: #c0d0df; scrollbar-arrow-color: #c0d0df; scrollbar-face-color: #fff; scrollbar-3dlight-color: #fff; scrollbar-darkshadow-color: #fff; scrollbar-track-color: #f2f2f2;}

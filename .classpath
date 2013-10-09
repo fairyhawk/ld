@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/c3p0-0.9.1.2.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/fastjson-1.1.30.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/freemarker-2.3.16.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/j2ee.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/javax.servlet.jsp.jstl-1.2.0.v201105211821.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/JFinal-bin-with-src-1.4.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jstl.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mysql-connector-java-5.1.20-bin.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/org.apache.taglibs.standard.glassfish-1.2.0.v201112081803.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/slf4j-log4j12-1.6.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/slf4j-simple-1.6.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/standard.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/guava-15.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/javamelody-1.29.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jfinal-ext-3.0.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jrobin-1.5.9.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/quartz-1.8.6.jar"/>
+	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
+</classpath>

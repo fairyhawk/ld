@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>背单词—罗德国际教育</title>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+<meta name="copyright" content="Copyright 2003-2013. www.luode.org . All Rights Reserved." />
+<meta name="keywords" content="托福培训,sat考试培训,美国留学机构,留学培训,出国留学" />
+<meta name="description" content="托福培训,sat考试培训,美国留学机构,留学培训,出国留学" />
+<script src="/js/jquery-1.9.0.js"></script>
+<script src="/js/bootstrap.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="/sbay/jquery.noty[1].css" />
+<link rel="stylesheet" type="text/css" href="/sbay/noty_theme_default[1]_(2).css" />
+<link rel="stylesheet" type="text/css" href="/sbay/17bdc_main.261c134833480f6ded42d6bcbed63fee[1].css" />
+<link rel="stylesheet" type="text/css" href="/sbay/vocabtest.bd2862ce19af9826e2017500de704457[1].css" />
+<link rel="stylesheet" type="text/css" href="/sbay/fontdiao[1]_(2).css" />
+<link rel="stylesheet" type="text/css" href="/sbay/font_awesome[1]_(2).css" />
+<!--[if (lt IE 9) & (!IEMobile)]>
+
+    <link rel="stylesheet" type="text/css" href="/sbay/shanbay_ie.cd79192d1f377dd6abbaa9930ff805cd[1]_(2).css"/>
+    <link rel="stylesheet" type="text/css" href="/sbay/font_awesome_ie7[1].css"/>
+    <![endif]-->
+
+
+</head>
+
+<body data-offset="50" data-target=".subnav" data-spy="scroll">
+	<img style="Z-INDEX: 10000000; POSITION: fixed; TOP: 40px; RIGHT: 160px" class=hide src="/sbay/clip[1].png" />
+	<!-- 头部 -->
+	<div align="center"><#include "/pages/navbar.html" parse=true/></div>
+	<!-- 头部 -->
+		<!-- 中间 -->
+<!-- 	<div class=logo>
+		<div class=container>
+			<div class=sub-nav>
+				<ul class="nav nav-pills">
+					<li class=active><a href="/letter/${member.id}">我的单词书</a></li>
+				</ul>
+
+			</div>
+		</div>
+	</div> -->
+	<!-- 中间 -->
+	<div class="gradient-bar">&nbsp;</div>
+	<div class="container main-body ">
+		<div class="row">
+			<div class="vocabtest-box span12">
+				<div class="page-header">
+					<h1>第二步： 共${wordtestCount}单词，请选择正确的词义，结果会显示在答题卡中</h1>
+				</div>
+				<p id="hint">
+					( <span class="red">红色</span>表示错误， <span class="green">绿色</span>表示正确)
+				</p>
+				<div id="result_words" class="well">
+					<p class="heading">答题卡</p>
+					<div id="answer_sheet">
+						<ul>
+							<#list word_map.keySet() as k>
+							<li id="${k}">${word_map[k]}</li> </#list>
+						</ul>
+					</div>
+				</div>
+				<div id="last_result" class="hide alert">
+					<p class="answer"></p>
+					<p class="def"></p>
+					<p class="right_answer_content hide">答对了</p>
+					<p class="error_answer_content hide">貌似不对</p>
+					<p class="error_definition hide">正确词义是：</p>
+					<br />
+				</div>
+
+				<form name="input" action="/letter/testStep3/" method="post">
+					<input type='hidden' name='memberId' value='${member.id}' />
+					<input type='hidden' name='bookId' value='${bookId}' />
+					<input type='hidden' name='chapterId' value='${chapterId}' />
+					<input type='hidden' id = "mtId" name='mtId' value='${mtId}' />
+					<#list answer_map.keySet() as itemK>
+						<div class="definition well">
+							<#assign arr=(itemK?split("_"))>
+							<p class="test_word">${arr[0]}</p>
+							<ul>
+								<#assign answer_list=answer_map[itemK]>
+								<#list answer_list as ls>
+									<li id="choice_${ls.id}">
+										<label class="radio">
+											<input class="word" type="radio" value="${ls.id}" answer="${arr[1]}"/>${ls.explanation}
+										</label>
+									</li>
+								</#list>
+							</ul>
+						</div>
+					</#list>
+					<input type="hidden" name="right_ranks" id="right_ranks" value="" />
+					<input type="hidden" name="word_ranks" value="" />
+					<input type="hidden" name="exam_name" value="CET4" />
+					<input type="hidden" name="wordtestCount" id="wordtestCount" value="${wordtestCount}" /> 
+					<div id="button_next" class="right">
+						<input type="hidden" name="wordtestCount_right" id="wordtestCount_right" value="0" /> 
+						<input type="hidden" name="wordtestCount_wrong" id="wordtestCount_wrong" value="0" /> 
+						<input type="hidden" name="rightWords" id="rightWords" value="0" /> 
+						<input type="hidden" name="wrongWords" id="wrongWords" value="0" /> 
+						<input type="submit" id="submit" value="下一步" onclick="return sub()" disabled />
+					</div>
+					<div class="clear"></div>
+				</form>
+
+			</div>
+		</div>
+		<div id="footer"></div>
+		<div class="copyright"></div>
+		<script src="/js/vocabtest.js"></script>
+		<script>
+			judge();
+			dis();
+		</script>
+
+		<script>
+			var wordtestCount = $
+			{
+				word_map.size()
+			};
+			function sub() {
+				$("#wordtestCount_right").val(wordtestCount_right);
+				$("#wordtestCount_wrong").val(wordtestCount_wrong);
+				$("#rightWords").val(rightWords);
+				$("#wrongWords").val(wrongWords);
+				return true;
+			}
+		</script>
+
+		<!-- Footer
+ ================================================== -->
+		<footer class="footer"> </footer>
+
+	</div>
+
+</body>
+</html>
+

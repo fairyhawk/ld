@@ -1,0 +1,91 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*公共定义*/
+html, body, div, p, ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, input, select, button, textarea, iframe, table, th, td { margin: 0; padding: 0; }
+img { border: 0 none; vertical-align: top; }
+ul, li { list-style-type: none; }
+body, input, select, button, textarea { font-size: 12px; color:#526884; font-family: Tahoma, Geneva, sans-serif; }
+.fixed:after { content: "."; display: block; clear: both; height: 0; visibility: hidden; }
+.fixed { display: block; min-height: 1%; }
+*html .fixed { height: 1%; }
+.clear { diplay: block!important; float: none!important; clear: both; overflow: hidden; width: auto!important; height: 0!important; margin: 0 auto!important; padding: 0!important; font-size: 0; line-height: 0; }
+a, a:link { color: #526884; text-decoration: none; }
+a:visited {  }
+a:active, a:hover { text-decoration: underline; }
+a:focus { outline: none; }
+.float_right_btn{ float:right; width:300px; text-align:right; padding-top:10px;}
+.border_1px{border:1px solid #CFCFCF; padding:5px;}
+.border_1px td{ padding:3px;}
+/*表单样式*/
+fieldset {padding:10px;margin-top:5px;border:0;background:#fff; line-height:30px;}
+fieldset label {float:left;width:110px;text-align:right;padding:0px;margin:3px;}
+fieldset .title{background:#e6e6e6; padding-left:10px; font-weight:bold;}
+fieldset .text_box_style{ border:1px solid #d5d5d5; background:#fff; height:15px; padding:5px;}
+fieldset div {clear:left;margin:10px 0;}
+fieldset .password_simple{ background:url(../images/icon_other.gif) 0 -102px no-repeat; width:21px; height:11px; padding:0; margin:0;}
+fieldset .tips_normal{color:#4f92d3; background:url(../images/icon_other.gif) 0 -150px no-repeat; padding-left:15px;}
+fieldset .tips_right{color:#68c441; background:url(../images/icon_other.gif) 0 -167px no-repeat; padding-left:15px;}
+fieldset .tips_error{color:#f43412; background:url(../images/icon_other.gif) 0 -183px no-repeat; padding-left:15px;}
+a.page_a{color:#3a4c71}
+a.page_a:hover{ color:#FF6600}
+
+/*文字*/
+.font_red{color:#ff7827;}
+.btn_70{ background:url(../images/btn_70.gif); width:70px; height:22px; text-align:center; line-height:22px;  display:-moz-inline-box;display:inline-block;text-decoration:none; cursor:pointer}
+
+/*登录*/
+.login_bg{ background:#dfe5ec;}
+#login_area{width:960px; height:522px; background:url(../images/login_bg.jpg) no-repeat; margin:0 auto;}
+#login_box{ width:320px; height:300px;padding:200px 0 0 440px;*padding:210px 0 0 440px; float:left}
+#login_box {fieldset {padding:0px;margin-top:0px;border:0;background:#fff; line-height:25px;}}
+#login_box fieldset label {float:left;width:50px;text-align:right;padding:0px;margin:1px;}
+#login_box fieldset div {clear:left;margin:8px 0;}
+#login_copyright{ color:#878787; text-align:center;}
+
+/*主界面*/
+.ie6_body{_background:url(../images/top_nav_bg.gif) 0 94px repeat-x; }
+#container {margin:0 auto; width:100%;}
+#top_bg{ background:url(../images/main_top_bg.jpg) no-repeat; height:94px; }
+
+/*左边导航*/
+#left{float:left; width:132px; background:url(../images/left_bg.gif); height:600px; overflow:hidden;overflow-x:auto;overflow-y:auto;white-space:nowrap;}
+#left .top_bg{ width:132px; background:url(../images/left_top_bg.gif) no-repeat; width:132px; padding-top:10px;}
+#left .menu{ width:126px; margin: 0 auto 1px auto; }
+#left .menu_sub{ width:124px; border-left:1px solid #b1bcc9;border-right:1px solid #b1bcc9;border-bottom:1px solid #b1bcc9; border-top:1px soild #fff; background:#fff;}
+#left .menu h3{ display:block; height:38px; background:url(../images/left_nav_bg.gif);font-size:12px; line-height:38px;}
+#left .menu h3 a{display:block; height:38px; text-decoration:none; }
+#left .menu h3 a:hover{ color:#8b9cc4;background:url(../images/left_nav_bg.gif) 0 -38px;}
+#left .menu h3 a img{ float:left; margin:8px 5px 0 18px;}
+#left .menu h3 a.btn_on{color:#8b9cc4;background:url(../images/left_nav_bg.gif) 0 -76px; color:#fff;}
+#left .menu li{ width:120px; height:33px; background:url(../images/left_nav_subbg.gif); line-height:33px; margin:1px auto;}
+#left .menu li a{ display:block; width:120px; height:33px;}
+#left .menu li a:hover{background:url(../images/left_nav_subbg.gif) 0 -33px;}
+#left .menu li a img{ float:left; margin:12px 5px 0 27px;}
+
+/*右边*/
+#right{ margin-left:132px !important; margin-left:132px;overflow:hidden}
+#top_nav{ background:url(../images/top_nav_bg.gif); height:62px; padding:18px 10px 0 10px;}
+#top_nav .logout{ float:right; width:300px; text-align:right; height:40px; line-height:20px;}
+
+#top_nav li{ width:120px; height:31px; float:left; display:block; margin-right:2px; text-align:center;line-height:31px;}
+#top_nav li a.btn{ height:31px; display:block; background:url(../images/top_nav_btn_bg.gif) 0 -31px; color:#fff;}#top_nav li a.btn:hover{background:url(../images/top_nav_btn_bg.gif); color:#717d95; text-decoration:none;}
+#top_nav li a.btn_on{background:url(../images/top_nav_btn_bg.gif); color:#717d95; text-decoration:none; font-weight:bold}
+/*右边主体*/
+#main { padding:5px; overflow:auto;}
+#main .text_box_style{ border:1px solid #d5d5d5; background:#fff; height:13px; padding:5px;}
+#main .search{ margin:5px 0; padding:10px; background:#f1f3f6; border:1px solid #b1c2d6}
+#main .position{ background:url(../images/position_bg.gif) repeat-y #e9edf3; border-bottom:1px solid #b1c2d6; padding:10px; }
+#main .table_style{ background:#b5c5d8; padding:1px; margin:5px 0;}
+#main .table_style td{ padding:5px;background:#fff;}
+#main .table_style td a{ color:#ff7827}
+
+#main .table_area{ margin:10px 0}
+#main .table_area_nav{height:29px; background:url(../images/table_nav_bg2.gif);}
+#main .table_area_nav li{width:95px; height:28px; float:left;display:block; margin-left:2px; text-align:center;line-height:28px;}
+#main .table_area_nav li a{ height:28px; display:block; background:url(../images/table_nav_bg.gif) 0 -28px; color:#fff;}
+#main .table_area_nav li a:hover{background:url(../images/table_nav_bg.gif) 0 -56px;text-decoration:none;}
+#main .table_area_nav li a.btn_on{background:url(../images/table_nav_bg.gif); color:#717d95; text-decoration:none; font-weight:bold}
+#main .table_area_nav li a.btn_on:hover{background:url(../images/table_nav_bg.gif); color:#717d95; text-decoration:none; font-weight:bold}
+#main .table_area_con{border-bottom:1px solid #a7b0bc;border-left:1px solid #a7b0bc;border-right:1px solid #a7b0bc; padding:10px;}
+#main .table_area_con div{ margin:5px 0}

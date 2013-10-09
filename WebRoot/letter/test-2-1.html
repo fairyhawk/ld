@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>背单词—罗德国际教育</title>
+<title>第一步： 请选择你认识的单词</title>
+<meta name="google-site-verification" content="-NdG3qfpcXJUHrk5vDwGVvi8ZQSYzjdL3crT9i746b4">
+	<meta name="keywords" content="17bdc 背单词 单词量 单词量测试 单词 英语单词 背单词软件 英语学习网站 学英语">
+		<meta name="description" content="仅使用5分钟，50个单词初步测量你的单词范围, 使用另外100个单词精确定位你的单词量">
+			<meta name="robots" content="index,follow">
+				<script src="/js/ga.js" type="text/javascript" async=""></script>
+				<script src="/js/jquery-1.7.2.min.js"></script>
+				<script src="/js/bootstrap.js"></script>
+				<meta name="author" content="">
+					<meta name="ujianVerification" content="142a9b3e2632832be6781c7e6a9c436f">
+						<!-- Le styles -->
+						<link rel="stylesheet" type="text/css" href="/css/jquery.noty.css">
+							<link rel="stylesheet" type="text/css" href="/css/noty_theme_default.css">
+								<link rel="stylesheet" type="text/css" href="/css/17bdc_main.css">
+									<link rel="stylesheet" type="text/css" href="/css/vocabtest.css">
+										<link rel="stylesheet" type="text/css" href="/css/font-awesome-v1.min.css">
+											<link rel="stylesheet" type="text/css" href="/css/fontdiao-v1.css">
+</head>
+<body data-offset="50" data-target=".subnav" data-spy="scroll">
+	<img style="Z-INDEX: 10000000; POSITION: fixed; TOP: 40px; RIGHT: 160px" class=hide src="/sbay/clip[1].png" />
+	<!-- 头部 -->
+	<div align="center"><#include "/pages/navbar.html" parse=true/></div>
+	<!-- 头部 -->
+	<!-- 中间 -->
+<!-- 	<div class=logo>
+		<div class=container>
+			<div class=sub-nav>
+				<ul class="nav nav-pills">
+					<li class=active><a href="/letter/${member.id}">我的单词书</a></li>
+				</ul>
+
+			</div>
+		</div>
+	</div> -->
+	<!-- 中间 -->
+	<!-- 主体 -->
+	<div class=gradient-bar>&nbsp;</div>
+	<!-- 横线 -->
+
+	<div class="container main-body ">
+		<#if testWordList?? >
+		<div class="row">
+			<div class="vocabtest-box span12">
+				<div class="page-header">
+					<h1>第一步： 我们将开始测试本单元所有单词，预计时间为15分钟左右</h1>
+				</div>
+				<form action="/letter/testStep2/" method="post">
+					<fieldset class="well" id="vocabulary_test">
+						<div id="select_operation" class="row">
+							<label class="checkbox span1 offset9"> <input id="select_all" type="checkbox"> 全选 </label> <label class="checkbox"> <input id="invert_selection" type="checkbox"> 反选 </label>
+						</div>
+						<ul>
+							<div class="row l2">
+								<#list testWordList as x>
+								<li class="span2"><label class="checkbox"> <input type="checkbox" name="testwords_${x.word}" value="${x.id}" class="word" /> ${x.word}
+								</label></li> </#list>
+							</div>
+						</ul>
+					</fieldset>
+
+					<input type="hidden" name="testType" value="${testType}" />
+					<input type="hidden" name="word_ranks" value="${word_ranks}" />
+					<input type="hidden" name="exam_name" value="GRE" /> 
+					<input type="hidden" name="memberId" value="${member.id}" />
+					<input type="hidden" name="bookId" value="${bookId}" />
+					<input type="hidden" name="chapterId" value="${chapterId}" />
+
+					<div class="button-area row" id="button_next">
+						<div class="span3 offset9">
+							<input type="submit" value="下一步" class="vocabtest-large-button" id="submit" />
+						</div>
+						<div class="row hide">
+							<p class="span2 offset10">请稍后...</p>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</form>
+
+			</div>
+		</div>
+		<#else>
+		<div class="page-header">
+			<h2>目前还没有生成测试单词</h2>
+		</div>
+		</#if>
+	</div>
+	<script src="/js/jquery.tmpl.min.js"> </script>
+	<script src="/js/cover.js"> </script>
+	<script src="/js/vocabtest.js"> </script>
+	<script src="/js/vocabtest.js"></script>
+	<script type="text/javascript">
+		add_bkground_css(2);
+		dis();
+		select_operation();
+	</script>
+
+
+	<!-- Footer
+ ================================================== -->
+	<footer class="footer"> </footer>
+
+	</div>
+	<!-- /container -->
+	<script src="/js/jquery-1.7.2.min.js"> </script>
+	<script src="/js/jquery.tmpl.min.js"></script>
+	<script src="/js/soundmanager2-jsmin.js"> </script>
+	<script src="/js/jquery.noty.js"> </script>
+	<script src="/js/jquery.color.js"></script>
+	<script src="/js/shanbay-base.js" charset="utf-8"></script>
+	<script src="/js/shanbay-all.js" charset="utf-8"></script>
+</body>
+</html>
+
